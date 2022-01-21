@@ -9,8 +9,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
   public static void main(String[] args) {
@@ -69,7 +75,7 @@ public class Main {
 
     // Aula 2
 
-    Set<String> alunos = new HashSet<>();
+    /*Set<String> alunos = new LinkedHashSet<>();
     // Collection<String> alunos = new HashSet<>();
     alunos.add("Uzumaki Naruto");
     alunos.add("Haruno Sakura");
@@ -118,12 +124,47 @@ public class Main {
 
     System.out.println(curso.estaMatriculado(a1));
 
-    String nomeBuscado = "Ivo Ramos";
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Digite o nome do aluno que deseja buscar: ");
+    String nomeBuscado = input.nextLine();
     Aluno alunoParaBuscar = new Aluno(nomeBuscado, 10);
 
     System.out.println("Os dois alunos são o mesmo? \n" + alunoParaBuscar.equals(a1));
 
     System.out.println("O aluno está matriculado?");
     System.out.println(curso.estaMatriculado(alunoParaBuscar));
+
+    ContaCorrente cc1 = new ContaCorrente("João Victor", "Oliveira", 50, 100);
+    ContaCorrente cc2 = new ContaCorrente("Heverson", "Clides", 40, 100);
+    ContaCorrente cc3 = new ContaCorrente("Henrique", "Caetano", 80, 100);
+    ContaCorrente cc4 = new ContaCorrente("Marcos", "Michel", 20, 100);
+
+    Set<ContaCorrente> listaCCs = new TreeSet<>();
+
+    listaCCs.add(cc1);
+    listaCCs.add(cc2);
+    listaCCs.add(cc3);
+    listaCCs.add(cc4);
+
+    System.out.println(listaCCs);
+
+    Aluno alunoRepetido = new Aluno("Intruso", 1);
+
+    curso.matricula(alunoRepetido);
+
+    System.out.println("Digite o número de matrícula que deseja buscar: ");
+    int matriculaBuscada = Integer.parseInt(input.nextLine());
+
+    System.out.println(curso.buscaMatriculado(matriculaBuscada));
+
+    System.out.println(curso.getMatriculaParaAluno().keySet());
+    System.out.println(curso.getMatriculaParaAluno().values());
+
+    Set<Entry<Integer, Aluno>> conjuntoMatriculaAluno = curso.getMatriculaParaAluno().entrySet();
+    for (Entry<Integer, Aluno> matriculaAluno : conjuntoMatriculaAluno) {
+      System.out.println(matriculaAluno.getKey());
+      System.out.println(matriculaAluno.getValue());
+    }*/
   }
 }
