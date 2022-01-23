@@ -49,6 +49,10 @@ public class Curso {
     this.matriculaParaAluno.put(aluno.getMatricula(), aluno);
   }
 
+  public void setAlunos(Set<Aluno> alunos) {
+    this.alunos = alunos;
+  }
+
   public boolean estaMatriculado(Aluno aluno) {
     return this.alunos.contains(aluno);
   }
@@ -66,5 +70,10 @@ public class Curso {
 
   public Map<Integer, Aluno> getMatriculaParaAluno() {
     return matriculaParaAluno;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("Curso %s com o instrutor %s.", this.nome, this.instrutor);
   }
 }
